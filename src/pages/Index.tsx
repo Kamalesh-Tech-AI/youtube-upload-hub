@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Video, Upload, LogOut } from "lucide-react";
+import { Video, Upload, LogOut, Play } from "lucide-react";
 
 const Index = () => {
   const [user, setUser] = useState<any>(null);
@@ -101,6 +101,34 @@ const Index = () => {
                 </Button>
               </>
             )}
+          </div>
+        </div>
+
+        {/* Video Player Section */}
+        <div className="max-w-4xl mx-auto mt-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-400">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-4">
+              <Play className="h-4 w-4" />
+              <span className="text-sm font-medium">Featured Video</span>
+            </div>
+            <h2 className="text-3xl font-bold text-foreground mb-2">
+              Watch Our Demo
+            </h2>
+            <p className="text-muted-foreground">
+              See how easy it is to share your videos
+            </p>
+          </div>
+          
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+            <div className="aspect-video">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
 
